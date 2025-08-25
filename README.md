@@ -5,7 +5,6 @@ The experimental dataset is split into training, validation, and test sets in an
 
 **Step 1: Feature Learning**
 
-    ```bash
     python feature_main.py \
         --output_dir=./saved_models \
         --model_name=cnnteacher.bin \
@@ -24,11 +23,9 @@ The experimental dataset is split into training, validation, and test sets in an
         --max_grad_norm 1.0 \
         --evaluate_during_training \
         --seed 123456  2>&1 | tee train_feature.log
-    ```
 
 **Step 2: Hybrid Knowledge Distillation**
 
-    ```bash
     python codebert_main.py \
         --alpha 0.7 \
         --output_dir=./saved_models \
@@ -48,4 +45,3 @@ The experimental dataset is split into training, validation, and test sets in an
         --max_grad_norm 1.0 \
         --evaluate_during_training \
         --seed 123456  2>&1 | tee train_codebert.log
-    ```
