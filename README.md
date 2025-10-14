@@ -1,5 +1,15 @@
 # VulATMHD
-The experimental dataset is split into training, validation, and test sets in an 8:1:1 ratio. The implementation is built upon Python 3.8 and primarily relies on two DL libraries: PyTorch (2.1.1+rocm5.6) and Transformers (4.35.2).
+This paper has been submitted in the journal of Information and Software Technology (Revision).
+
+## Environment Setup
+To successfully run the project, the following Python packages need to be installed:
+torch==2.1.1+rocm5.6
+transformers==4.35.2
+tokenizers==0.15.0
+numpy==1.24.1
+tqdm==4.65.0
+scikit-learn==1.7.0
+pandas==2.2.3
 
 ## Execution Steps
 
