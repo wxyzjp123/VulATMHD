@@ -15,16 +15,42 @@ pandas==2.2.3
 
 ## Execution Steps
 
+The CodeBERT model fine-tuned with VulATMHD can be downloaded from the following link:
+```
+https://drive.google.com/file/d/1hL7qmmM6rkDObj4SeySi192aa53RR8yn/view?usp=sharing
+```
+Once downloaded, place the model in the `saved_models/checkpoint-best-acc` directory and execute the following command for model inference:
+```
+python codebert_main.py \
+    --output_dir=./saved_models \
+    --model_name=soft_distil_model_07.bin \
+    --tokenizer_name=microsoft/codebert-base \
+    --model_name_or_path=microsoft/codebert-base \
+    --train_data_file=../data/big_vul/train.csv \
+    --eval_data_file=../data/big_vul/val.csv \
+    --test_data_file=../data/big_vul/test.csv \
+    --do_test \
+    --block_size 512 \
+    --epochs 50 \
+    --train_batch_size 8 \
+    --eval_batch_size 8 \
+    --learning_rate 2e-5 \
+    --max_grad_norm 1.0 \
+    --evaluate_during_training \
+    --seed 123456  2>&1 | tee test.log
+```
+To retrain the model, you only need to execute the following two steps:
+
 **Step 1: Feature Learning**
 
     python feature_main.py \
         --output_dir=./saved_models \
         --model_name=cnnteacher.bin \
-        --tokenizer_name=codebert \
-        --model_name_or_path=codebert \
-        --train_data_file=train.csv \
-        --eval_data_file=val.csv \
-        --test_data_file=test.csv \
+        --tokenizer_name=microsoft/codebert-base \
+        --model_name_or_path=microsoft/codebert-base \
+        --train_data_file=../data/big_vul/train.csv \
+        --eval_data_file=../data/big_vul/val.csv \
+        --test_data_file=../data/big_vul/test.csv \
         --do_train \
         --do_test \
         --block_size 512 \
@@ -39,14 +65,13 @@ pandas==2.2.3
 **Step 2: Hybrid Knowledge Distillation**
 
     python codebert_main.py \
-        --alpha 0.7 \
         --output_dir=./saved_models \
         --model_name=model.bin \
-        --tokenizer_name=codebert \
-        --model_name_or_path=codebert \
-        --train_data_file=train.csv \
-        --eval_data_file=val.csv \
-        --test_data_file=test.csv \
+        --tokenizer_name=microsoft/codebert-base \
+        --model_name_or_path=microsoft/codebert-base \
+        --train_data_file=../data/big_vul/train.csv \
+        --eval_data_file=../data/big_vul/val.csv \
+        --test_data_file=../data/big_vul/test.csv \
         --do_train \
         --do_test \
         --block_size 512 \
