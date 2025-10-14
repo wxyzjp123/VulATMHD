@@ -2,7 +2,7 @@
 This paper has been submitted in the journal of Information and Software Technology (Revision).
 
 ## Environment Setup
-To successfully run the project, the following Python packages need to be installed:
+To successfully run the project, the following Python packages need to be installed in a `Python 3.8` environment:
 ```
 torch==2.1.1+rocm5.6
 transformers==4.35.2
