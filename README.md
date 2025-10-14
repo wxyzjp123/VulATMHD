@@ -82,3 +82,8 @@ To retrain the model, you only need to execute the following two steps:
         --max_grad_norm 1.0 \
         --evaluate_during_training \
         --seed 123456  2>&1 | tee train_codebert.log
+        
+## Contact
+If you have any problem about our code, feel free to contact
+
+* 202310188991@mail.scut.edu.cn or describe your problem in Issues.
