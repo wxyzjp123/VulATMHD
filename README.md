@@ -3,6 +3,7 @@ This paper has been submitted in the journal of Information and Software Technol
 
 ## Environment Setup
 To successfully run the project, the following Python packages need to be installed:
+```
 torch==2.1.1+rocm5.6
 transformers==4.35.2
 tokenizers==0.15.0
@@ -10,6 +11,7 @@ numpy==1.24.1
 tqdm==4.65.0
 scikit-learn==1.7.0
 pandas==2.2.3
+```
 
 ## Execution Steps
 
