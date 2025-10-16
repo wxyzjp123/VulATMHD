@@ -13,13 +13,21 @@ scikit-learn==1.7.0
 pandas==2.2.3
 ```
 
+## Datasets
+
+Our experiments are conducted on the following three publicly available datasets, for which we provide the corresponding download links or source data in the `data/` directory:
+
+-   **BigVul**: Jiahao Fan, Yi Li, Shaohua Wang, and Tien N Nguyen. A C/C++ code vulnerability dataset with code changes and CVE summaries. In Proceedings of the 17th international conference on mining software repositories, pages 508–512, 2020.
+-   **Devign**: Yaqin Zhou, Shangqing Liu, Jingkai Siow, Xiaoning Du, and Yang Liu. Devign: Effective vulnerability identification by learning comprehensive program semantics via graph neural networks. Advances in neural information processing systems, 32, 2019.
+-   **Reveal**: Saikat Chakraborty, Rahul Krishna, Yangruibo Ding, and Baishakhi Ray. Deep learning based vulnerability detection: Are we there yet? IEEE Transactions on Software Engineering, 48(9):3280–3296, 2021.
+
 ## Execution Steps
 
 The CodeBERT model fine-tuned with VulATMHD can be downloaded from the following link:
 ```
 https://drive.google.com/file/d/1hL7qmmM6rkDObj4SeySi192aa53RR8yn/view?usp=sharing
 ```
-Once downloaded, place the model in the `saved_models/checkpoint-best-acc` directory and execute the following command for model inference:
+Once downloaded, place the model in the `saved_models/checkpoint-best-acc/` directory and execute the following command for model inference:
 ```
 python codebert_main.py \
     --output_dir=./saved_models \
