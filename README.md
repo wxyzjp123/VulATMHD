@@ -34,9 +34,9 @@ python codebert_main.py \
     --model_name=soft_distil_model_07.bin \
     --tokenizer_name=microsoft/codebert-base \
     --model_name_or_path=microsoft/codebert-base \
-    --train_data_file=../data/big_vul/train.csv \
-    --eval_data_file=../data/big_vul/val.csv \
-    --test_data_file=../data/big_vul/test.csv \
+    --train_data_file=../data/BigVul/train.csv \
+    --eval_data_file=../data/BigVul/val.csv \
+    --test_data_file=../data/BigVul/test.csv \
     --do_test \
     --block_size 512 \
     --epochs 50 \
@@ -56,9 +56,9 @@ To retrain the model, you only need to execute the following two steps:
         --model_name=cnnteacher.bin \
         --tokenizer_name=microsoft/codebert-base \
         --model_name_or_path=microsoft/codebert-base \
-        --train_data_file=../data/big_vul/train.csv \
-        --eval_data_file=../data/big_vul/val.csv \
-        --test_data_file=../data/big_vul/test.csv \
+        --train_data_file=../data/BigVul/train.csv \
+        --eval_data_file=../data/BigVul/val.csv \
+        --test_data_file=../data/BigVul/test.csv \
         --do_train \
         --do_test \
         --block_size 512 \
@@ -77,9 +77,9 @@ To retrain the model, you only need to execute the following two steps:
         --model_name=model.bin \
         --tokenizer_name=microsoft/codebert-base \
         --model_name_or_path=microsoft/codebert-base \
-        --train_data_file=../data/big_vul/train.csv \
-        --eval_data_file=../data/big_vul/val.csv \
-        --test_data_file=../data/big_vul/test.csv \
+        --train_data_file=../data/BigVul/train.csv \
+        --eval_data_file=../data/BigVul/val.csv \
+        --test_data_file=../data/BigVul/test.csv \
         --do_train \
         --do_test \
         --block_size 512 \
