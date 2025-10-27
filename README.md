@@ -2,20 +2,24 @@
 This paper has been submitted in the journal of Information and Software Technology (Revision).
 
 ## Environment Setup
-To successfully run the project, the following Python packages need to be installed in a `Python 3.8` environment:
+To successfully run the project, first clone this repository and access the main directory via the following command:
 ```
-torch==2.1.1+rocm5.6
-transformers==4.35.2
-tokenizers==0.15.0
-numpy==1.24.1
-tqdm==4.65.0
-scikit-learn==1.7.0
-pandas==2.2.3
+git clone https://github.com/wxyzjp123/VulATMHD.git
+cd VulATMHD
 ```
+Then, the python dependencies should be installed via the following command:
+```
+pip install -r requirements.txt
+```
+
+- The experiments use torch==2.1.1+rocm 5.6.  If you are on an AMD ROCm platform, you may want to check out this
+[installation guide](https://rocm.docs.amd.com/projects/install-on-linux/en/develop/install/3rd-party/pytorch-install.html). 
+
+- Python 3.8+ is recommended, [Python 3.11.5](https://www.python.org/downloads/release/python-3115/) has been fully tested without issues.
 
 ## Datasets
 
-Our experiments are conducted on the following three publicly available datasets, for which we provide the corresponding download links or source data in the `data/` directory:
+The experiments are conducted on the following three publicly available datasets, for which we provide the corresponding download links or source data in the `data/` directory:
 
 -   **BigVul**: Jiahao Fan, Yi Li, Shaohua Wang, and Tien N Nguyen. A C/C++ code vulnerability dataset with code changes and CVE summaries. In Proceedings of the 17th international conference on mining software repositories, pages 508–512, 2020.
 -   **Devign**: Yaqin Zhou, Shangqing Liu, Jingkai Siow, Xiaoning Du, and Yang Liu. Devign: Effective vulnerability identification by learning comprehensive program semantics via graph neural networks. Advances in neural information processing systems, 32, 2019.
@@ -23,7 +27,7 @@ Our experiments are conducted on the following three publicly available datasets
 
 ## Execution Steps
 
-The CodeBERT model fine-tuned with VulATMHD can be downloaded from the following link:
+The CodeBERT fine-tuned with VulATMHD can be downloaded from the following link:
 ```
 https://drive.google.com/file/d/1hL7qmmM6rkDObj4SeySi192aa53RR8yn/view?usp=sharing
 ```
@@ -31,7 +35,7 @@ Once downloaded, place the model in the `saved_models/checkpoint-best-acc/` dire
 ```
 python codebert_main.py \
     --output_dir=./saved_models \
-    --model_name=soft_distil_model_07.bin \
+    --model_name=model.bin \
     --tokenizer_name=microsoft/codebert-base \
     --model_name_or_path=microsoft/codebert-base \
     --train_data_file=data/BigVul/train.csv \
