@@ -1,6 +1,14 @@
 # VulATMHD
 This paper has been submitted in the journal of Information and Software Technology (Revision).
 
+## Datasets
+
+The experiments are conducted on the following three publicly available datasets, for which we provide the corresponding download links or raw data in the `data/` directory:
+
+-   **BigVul**: Jiahao Fan, Yi Li, Shaohua Wang, and Tien N Nguyen. A C/C++ code vulnerability dataset with code changes and CVE summaries. In Proceedings of the 17th international conference on mining software repositories, pages 508–512, 2020.
+-   **Devign**: Yaqin Zhou, Shangqing Liu, Jingkai Siow, Xiaoning Du, and Yang Liu. Devign: Effective vulnerability identification by learning comprehensive program semantics via graph neural networks. Advances in neural information processing systems, 32, 2019.
+-   **Reveal**: Saikat Chakraborty, Rahul Krishna, Yangruibo Ding, and Baishakhi Ray. Deep learning based vulnerability detection: Are we there yet? IEEE Transactions on Software Engineering, 48(9):3280–3296, 2021.
+
 ## Environment Setup
 To successfully run the project, first clone this repository and access the main directory via the following command:
 ```
@@ -12,18 +20,9 @@ Then, the python dependencies should be installed via the following command:
 pip install -r requirements.txt
 ```
 
-- The experiments use torch==2.1.1+rocm 5.6.  If you are on an AMD ROCm platform, you may want to check out this
-[installation guide](https://rocm.docs.amd.com/projects/install-on-linux/en/develop/install/3rd-party/pytorch-install.html). 
+- The experiments use torch==2.1.2+rocm 5.6. If you are on an AMD ROCm platform, you may want to check out this [installation guide](https://rocm.docs.amd.com/projects/install-on-linux/en/develop/install/3rd-party/pytorch-install.html). 
 
 - Python 3.8+ is recommended, [Python 3.11.5](https://www.python.org/downloads/release/python-3115/) has been fully tested without issues.
-
-## Datasets
-
-The experiments are conducted on the following three publicly available datasets, for which we provide the corresponding download links or source data in the `data/` directory:
-
--   **BigVul**: Jiahao Fan, Yi Li, Shaohua Wang, and Tien N Nguyen. A C/C++ code vulnerability dataset with code changes and CVE summaries. In Proceedings of the 17th international conference on mining software repositories, pages 508–512, 2020.
--   **Devign**: Yaqin Zhou, Shangqing Liu, Jingkai Siow, Xiaoning Du, and Yang Liu. Devign: Effective vulnerability identification by learning comprehensive program semantics via graph neural networks. Advances in neural information processing systems, 32, 2019.
--   **Reveal**: Saikat Chakraborty, Rahul Krishna, Yangruibo Ding, and Baishakhi Ray. Deep learning based vulnerability detection: Are we there yet? IEEE Transactions on Software Engineering, 48(9):3280–3296, 2021.
 
 ## Execution Steps
 
