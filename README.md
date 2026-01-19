@@ -1,5 +1,5 @@
 # VulATMHD
-This paper has been submitted in the journal of Information and Software Technology (Revision).
+VulATMHD: Joint adaptive triplet mining and hybrid distillation for type-aware vulnerability classification (IST 2026).
 
 ## Datasets
 
